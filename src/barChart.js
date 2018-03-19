@@ -34,10 +34,10 @@ class Chart extends Component {
 
           return (
             <div className="customizedToolTip">
-              <p className="ToolTipTitle">{data.island}</p>
+              <p className="ToolTipTitle">{data.continent}</p>
               <p className="ToolTipText">Distribution: {data.percent}%</p>
-              <p className="ToolTipText"># of Pigs: {data.pigPopulation.toLocaleString()}</p>
-              <p className="ToolTipText">Total Pigs {data.year}: {data.total.toLocaleString()}</p>
+              <p className="ToolTipText">Predicted Pop.: {data.population.toLocaleString()}</p>
+              <p className="ToolTipText">Total Predicted Pop. {data.year}: {data.total.toLocaleString()}</p>
             </div>
           );
         }
@@ -49,14 +49,14 @@ class Chart extends Component {
               data={data}
               margin={{top: 2, right: 0, left: 0, bottom: 0}}>
          <XAxis 
-             dataKey="island"
+             dataKey="continent"
              fontFamily="Merriweather Sans"
              tick={{ fill: 'black', dy: 5 }}
              fontWeight="normal" 
              
              />
          <YAxis 
-            domain={[0, 60]} 
+            domain={[0, 70]} 
             axisLine={false}
             tick = {false}
             width = {0}

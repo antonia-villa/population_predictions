@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: #003a6d;
+  background-color: #2f3039;
   padding-top: 20px;
   padding-left: 50px;
   padding-right: 50px;
@@ -10,9 +10,11 @@
 }
 
 .visualBackground{
-  background: url('./img/islands.png') no-repeat;
-  opacity: .8;
-  background-size: 110%;
+background-color: #D8D8D8;
+  background: url('./img/world_map.png') center no-repeat;
+  background-size: 100%;
+
+  /*opacity: .7;*/
 }
 
 .visualContainer{
@@ -184,10 +186,9 @@ opacity: .7;
 	}
 
 	.visualBackground{
-  		background: url('./img/islands.png') no-repeat;
-  		opacity: .8;
-  		background-size: 100%;
-  		background-position: 0px 100px;
+  		min-height: 100%;
+  		min-width: 100%;
+  		background-position: 20px 145px;
 	}
 
 	.projectContainer{

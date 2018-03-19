@@ -1,0 +1,185 @@
+{
+	"WORLD POPULATION": 
+	[
+		{
+		"year": 2010,
+		"continent": "Asia",
+		"population": 4165
+		},
+		{
+		"year": 2010,
+		"continent": "Africa",
+		"population": 1031
+		},
+		{
+		"year": 2010,
+		"continent": "Europe",
+		"population": 740
+		},
+		{
+		"year": 2010,
+		"continent": "South America",
+		"population": 596
+		},
+		{
+		"year": 2010,
+		"continent": "North America",
+		"population": 347
+		},
+		{
+		"year": 2010,
+		"continent": "Oceania",
+		"population": 37
+		},
+		{
+		"year": 2015,
+		"continent": "Asia",
+		"population": 4385
+		},
+		{
+		"year": 2015,
+		"continent": "Africa",
+		"population": 1166
+		},
+		{
+		"year": 2015,
+		"continent": "Europe",
+		"population": 743
+		},
+		{
+		"year": 2015,
+		"continent": "South America",
+		"population": 630
+		},
+		{
+		"year": 2015,
+		"continent": "North America",
+		"population": 361
+		},
+		{
+		"year": 2015,
+		"continent": "Oceania",
+		"population": 39
+		},
+		{
+		"year": 2020,
+		"continent": "Asia",
+		"population": 4582
+		},
+		{
+		"year": 2020,
+		"continent": "Africa",
+		"population": 1312
+		},
+		{
+		"year": 2020,
+		"continent": "Europe",
+		"population": 744
+		},
+		{
+		"year": 2020,
+		"continent": "South America",
+		"population": 662
+		},
+		{
+		"year": 2020,
+		"continent": "North America",
+		"population": 376
+		},
+		{
+		"year": 2020,
+		"continent": "Oceania",
+		"population": 42
+		},
+		{
+		"year": 2025,
+		"continent": "Asia",
+		"population": 4749
+		},
+		{
+		"year": 2025,
+		"continent": "Africa",
+		"population": 1468
+		},
+		{
+		"year": 2025,
+		"continent": "Europe",
+		"population": 741
+		},
+		{
+		"year": 2025,
+		"continent": "South America",
+		"population": 691
+		},
+		{
+		"year": 2025,
+		"continent": "North America",
+		"population": 390
+		},
+		{
+		"year": 2025,
+		"continent": "Oceania",
+		"population": 45
+		},
+		{
+		"year": 2030,
+		"continent": "Asia",
+		"population": 4887
+		},
+		{
+		"year": 2030,
+		"continent": "Africa",
+		"population": 1634
+		},
+		{
+		"year": 2030,
+		"continent": "Europe",
+		"population": 736
+		},
+		{
+		"year": 2030,
+		"continent": "South America",
+		"population": 717
+		},
+		{
+		"year": 2030,
+		"continent": "North America",
+		"population": 403
+		},
+		{
+		"year": 2030,
+		"continent": "Oceania",
+		"population": 47
+		},
+		{
+		"year": 2035,
+		"continent": "Asia",
+		"population": 4997
+		},
+		{
+		"year": 2035,
+		"continent": "Africa",
+		"population": 1812
+		},
+		{
+		"year": 2035,
+		"continent": "Europe",
+		"population": 730
+		},
+		{
+		"year": 2035,
+		"continent": "South America",
+		"population": 739
+		},
+		{
+		"year": 2035,
+		"continent": "North America",
+		"population": 415
+		},
+		{
+		"year": 2035,
+		"continent": "Oceania",
+		"population": 50
+		}
+	]
+}
