@@ -7,7 +7,7 @@ import ProgressBar from './progressBar.js'
 
 /* Import Data */
 // import * as data from './wild-pig-data.json';
-import * as data from './world-population.json';
+import * as data from './population_predictions.json';
 /* Import Data cleansing function */
 import {uniqueValues} from './dataCleansing.js'
 
