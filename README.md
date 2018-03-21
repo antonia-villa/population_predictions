@@ -1,4 +1,11 @@
-# Hawaiian Pig Visualization Assignment
+# Population Preductions
+https://population-predictions.herokuapp.com/
+
+Long-term global population growth is difficult to predict. The United Nations and the US Census Bureau have varying opinions on the future of the world population. The following visual shows what percent of the total world population each continent will contribute to from 2010 to 2035. 
+
+!![](//public/population_predictions.png)
+
+
 
 **Objective:** Using [React](https://reactjs.org/), create an animated bar chart
 that shows the data over time.
@@ -9,6 +16,7 @@ data about wild pig populations on the various Hawaiian islands recorded over
 several years. Your task is to take this data and use React to create an
 animated bar chart. The chart should show pig population across islands, with
 each separate year of data being shown as a separate frame of the animation.
+
 
 The chart should have these features:
 
