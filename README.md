@@ -3,7 +3,7 @@ https://population-predictions.herokuapp.com/
 
 Long-term global population growth is difficult to predict. The United Nations and the US Census Bureau have varying opinions on the future of the world population. The following visual shows what percent of the total world population each continent will contribute to from 2010 to 2035. 
 
-![](/public/population_predictions)
+![](//public/population_predictions.png)
 
 
 
