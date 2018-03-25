@@ -3,16 +3,15 @@ https://population-predictions.herokuapp.com/
 
 Long-term global population growth is difficult to predict. The United Nations and the US Census Bureau have varying opinions on the future of the world population. The following visual shows what percent of the total world population each continent will contribute from 2010 to 2035. 
 
-![](//src/img/population_predictions.png)
+![](population_predictions.png)
 
 
 ## Requirements
-* Build a time series data visualization
+* Build a data visualization based on time series data
 * Animate the visual to step through the data, displaying each year for a specified period of time
  * Each year should be a separate frame of the animation
-* Display progress bar showing currently displayed data point in relation to the others 
-* Allow user to play/pause the visual at any point, pausing on the year currently being displayed
-* Allow user to control inital state of visual through the query parameters
+* Display progress bar showing currently displayed data point in relation to the full data set
+* Allow user to play/pause the visual at any point, pausing on the year currently being displayed using query parameters in the URL
 * Have a visually appealing design on both desktop and mobile
 
 
@@ -23,8 +22,6 @@ Long-term global population growth is difficult to predict. The United Nations a
   * React-router-dom
   * Query-string
 * Javascript
-
-
 
 
 ## Steps to Setting Up
