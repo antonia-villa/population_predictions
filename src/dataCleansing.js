@@ -27,3 +27,17 @@ export function uniqueValues(data){
 
     return uniqueYears
 }
+
+export function changeData(data){
+  var years = {}
+  for(let i =0; i < data.length; i++){
+    var year = data[i].year
+    if(!years[year]){
+      years[year] = []
+    }
+    years[year].push(data[i])
+  }
+  
+  return years
+
+}

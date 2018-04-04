@@ -6,10 +6,9 @@ import Chart from './barChart.js'
 import ProgressBar from './progressBar.js'
 
 /* Import Data */
-// import * as data from './wild-pig-data.json';
 import * as data from './population_predictions.json';
 /* Import Data cleansing function */
-import {uniqueValues} from './dataCleansing.js'
+import {uniqueValues, changeData} from './dataCleansing.js'
 
 /* Used for Query URL Params */
 import parseQueryString from 'query-string';
@@ -19,6 +18,7 @@ class VisualContainer extends Component {
       super(props)
       this.state = {
         allData: data["WORLD POPULATION"],
+        dataByYear: changeData(data["WORLD POPULATION"]),
         uniqueYears: uniqueValues(data["WORLD POPULATION"]),
         initialYear: '',
         initialYearIndex: '',
@@ -36,65 +36,50 @@ class VisualContainer extends Component {
    };
 
 
-// Filter data based on year to pass to Chart component
-   filterData(year, uniqueYears) {
-     // Select Sub-Data set from raw data based on year
-      var results = []
-      this.state.allData.forEach(function(item){
-        if(item.year === year){
-          results.push(item)
-        }
-      })
-
-      // Calculate Progress percent based on unique years in data set
-      // Used to update for Progress Bar component
-      var progressPercent = Number((this.state.yearIndex/(uniqueYears.length-1)*100).toFixed(0))
-
-      this.setState({
-        data: results,
-        year: year,
-        progress: progressPercent,
-        yearIndex: this.state.yearIndex + 1
-      })  
-   }
-
    // Dynamically change dataset based on array of unique years
    changeData() {
       var uniqueYears = this.state.uniqueYears
       var newIndex = this.state.yearIndex;
- 
-      if(newIndex <= uniqueYears.length -1){
-         this.filterData(uniqueYears[newIndex], uniqueYears) 
-      }
-   }
+
+      var testData = this.state.dataByYear[uniqueYears[newIndex]]
+      var progressPercent = Number((this.state.yearIndex/(uniqueYears.length-1)*100).toFixed(0))
+
+      this.setState({
+        data: testData,
+        year: uniqueYears[newIndex],
+        progress: progressPercent,
+        yearIndex: this.state.yearIndex + 1
+      })
+    }
+
+
+
 
 
   componentWillMount(){
     // Extract and parse query string parameters 
-    var queryParams = parseQueryString.parse(this.props.location.search);
+    var queryParams = parseQueryString.parse(this.props.location.search); //return everything from ?--> - .parse create object of query params
     var year = queryParams.year
-    var indexYear = this.state.uniqueYears.indexOf(Number(year))
+    var indexYear = this.state.uniqueYears.indexOf(Number(year)) // used to calculate progress percentage
     var paused = (queryParams.paused === 'true')
 
-    var progressPercent = Number((indexYear/(this.state.uniqueYears.length-1)*100).toFixed(0))
+    var progressPercent = Number((indexYear/(this.state.uniqueYears.length-1)*100).toFixed(0)) // length -1 - to take into account index of array of unique years
     
     // Set State and run interval
     this.setState({
       initialYear: year,
-          initialYearIndex: indexYear,
-          initialProgress: progressPercent,
-          initialPausedState: paused,
+      initialYearIndex: indexYear,
+      initialProgress: progressPercent,
+      initialPausedState: paused,
       year: year,
       yearIndex: indexYear,
       progress: progressPercent,
       paused: paused
-    },() => {
-      this.changeData(this.state.uniqueYears)
-        if(!this.state.paused){
-          this.timerID = setInterval(
-                  () => this.changeData(), 2000);     
-        }
-      })
+    })
+   
+         this.timerID = setInterval(
+            () => this.changeData(), 2000
+      );
   }
 
 
@@ -106,13 +91,16 @@ class VisualContainer extends Component {
 
    handleStart(event){
       event.preventDefault();
-      this.timerID = setInterval(
-            () => this.changeData(), 2000
-      );
+      this.setState({paused: false})
+      // this.timerID = setInterval(
+      //       () => this.changeData(), 2000
+      // );
+      setTimeout(this.changeData(), 2000)
    }
 
    handleRestart(event){
       event.preventDefault();
+      clearInterval(this.timerID);
       this.setState({
         paused: this.state.initialPausedState,
         year: this.state.initialYear,
