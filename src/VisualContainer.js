@@ -43,18 +43,18 @@ class VisualContainer extends Component {
 
       var testData = this.state.dataByYear[uniqueYears[newIndex]]
       var progressPercent = Number((this.state.yearIndex/(uniqueYears.length-1)*100).toFixed(0))
-
-      this.setState({
-        data: testData,
-        year: uniqueYears[newIndex],
-        progress: progressPercent,
-        yearIndex: this.state.yearIndex + 1
-      })
+      if(this.state.yearIndex+1 > uniqueYears.length){
+        clearInterval(this.timerID)
+      } else {
+          this.setState({
+          data: testData,
+          year: uniqueYears[newIndex],
+          progress: progressPercent,
+          yearIndex: this.state.yearIndex + 1
+        })  
+      }
+      
     }
-
-
-
-
 
   componentWillMount(){
     // Extract and parse query string parameters 
@@ -75,27 +75,26 @@ class VisualContainer extends Component {
       yearIndex: indexYear,
       progress: progressPercent,
       paused: paused
-    })
-   
-         this.timerID = setInterval(
-            () => this.changeData(), 2000
-      );
+    }) 
   }
 
 
    handlePause (event){
       event.preventDefault();
       this.setState({paused: true})
+      // this.clearInterval();
+      // old code
       clearInterval(this.timerID);
    }
 
    handleStart(event){
       event.preventDefault();
       this.setState({paused: false})
-      // this.timerID = setInterval(
-      //       () => this.changeData(), 2000
-      // );
-      setTimeout(this.changeData(), 2000)
+      
+      this.timerID = setInterval(
+            () => this.changeData(), 2000
+      );
+
    }
 
    handleRestart(event){
