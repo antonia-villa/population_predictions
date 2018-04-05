@@ -76,6 +76,7 @@ class VisualContainer extends Component {
       progress: progressPercent,
       paused: paused
     }) 
+
   }
 
 

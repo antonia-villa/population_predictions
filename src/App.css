@@ -82,7 +82,7 @@ h2{
 /***** Action Container ****/
 /* Action Buttons */
 .actions{
-	display:block;
+	display:table;
 	width: 98%;
 	padding:10px;
 	margin-top:10px;
@@ -97,13 +97,15 @@ h2{
 
 
 #startButtons{
-	display: inline-block;
+	display: table-cell;
 	float:left;
+	height: 15px;
 }
 
 #replayButton{
-	display: inline-block;
+	display: table-cell;
 	float:right;
+	height: 15px;
 }
 
 /* Progress Bar */
@@ -116,7 +118,7 @@ h2{
 }
 
 .progressBar{
-	display: inline-block;
+	display: table-cell;
 	width: 90%;
 	height: 20px;
 	margin-left: 10px;
